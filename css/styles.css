@@ -7,6 +7,8 @@ html, body {
   height: 100%;
   font-family: "Barlow Condensed", sans-serif;
   overflow-x: hidden;
+  letter-spacing: 1px;
+  font-size: 16pt;
 }
 
 * {
@@ -16,7 +18,7 @@ html, body {
 
 a {
   text-decoration: none;
-  color: #2b2b2b;
+  color: #111;
 }
 
 a:hover {
@@ -25,6 +27,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Comfortaa", cursive;
+  letter-spacing: normal;
 }
 
 ul, ol {
@@ -32,8 +35,8 @@ ul, ol {
 }
 
 body {
-  background-color: #f0f0f0;
-  color: #2b2b2b;
+  background-color: #fff;
+  color: #111;
 }
 
 .base-subtitle {
@@ -42,6 +45,11 @@ body {
 
 .base-paragraph {
   padding: 5px 20px;
+}
+
+._spacer {
+  margin-top: 120px;
+  display: block;
 }
 
 .footer {
@@ -64,8 +72,10 @@ body {
 .header {
   height: 420px;
   text-align: center;
-  background-color: white;
-  background-image: url();
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.25)), to(rgba(255, 255, 255, 0))), url(../images/01-header-bg-1.jpg);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0)), url(../images/01-header-bg-1.jpg);
+  background-size: cover;
+  background-position: bottom;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,52 +94,34 @@ body {
 }
 
 .header_airbnb-logo {
-  fill: #FF5A5F;
-  width: 50px;
-  height: 50px;
   margin: 30px;
+  float: left;
+  position: relative;
+  left: 28%;
 }
 
 .header_lipari-logo {
-  width: 445px;
-  height: 200px;
   margin-top: 20px;
 }
 
 .cards {
-  height: 300px;
+  min-height: 400px;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 0 10px;
   grid-template-columns: repeat(4, 1fr);
   padding: 0 20px;
 }
 
-.card1, .card2, .card3, .card4 {
+.cards-card {
+  min-height: 350px;
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  padding: 0px 5px;
+  padding: 0px 10px;
   position: relative;
 }
 
-.card1 {
-  background-image: url("../images/index-limpieza-img1.jpg");
-  background-size: cover;
-}
-
-.card2 {
-  background-color: blue;
-}
-
-.card3 {
-  background-color: green;
-}
-
-.card4 {
-  background-color: gray;
-}
-
-.card-btn {
+.cards-btn {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -142,26 +134,116 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #2b2b2b;
-  background-color: lightblue;
   border-radius: 5px;
-  border: 1px white solid;
-  width: 80px;
-  height: 30px;
+  border: 3px #fff solid;
+  width: 120px;
+  height: 35px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-.card-btn:hover {
-  background-color: white;
-  color: black;
-  border-color: black;
+.cards-btn:hover {
+  background-color: #fff;
+  color: #111;
+  border-color: #111;
+  text-decoration: none;
+}
+
+.cards-subtitle {
+  text-align: center;
+  margin: 0 5px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.limpieza-card1 {
+  background: url("../images/01-limpieza-card-1.jpg");
+}
+
+.limpieza-card2 {
+  background: url("../images/01-limpieza-card-2.jpg");
+}
+
+.limpieza-card3 {
+  background: url("../images/01-limpieza-card-3.jpg");
+}
+
+.limpieza-card4 {
+  background: url("../images/01-limpieza-card-4.jpg");
+}
+
+.limpieza-card1, .limpieza-card2, .limpieza-card3, .limpieza-card4 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.entretenimiento-links-card {
+  background: none;
+  grid-column: span 2;
+}
+
+.entretenimiento-card2 {
+  background-color: #ACE4BD;
+}
+
+.entretenimiento-card3 {
+  background-color: #E3BC92;
+}
+
+.entretenimiento__sitios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.entretenimiento__sitios-gold, .entretenimiento__sitios-silver {
+  border: 5px solid;
+  border-image-slice: 1;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 170px;
+  height: 100px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.entretenimiento__sitios-gold:hover, .entretenimiento__sitios-silver:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.entretenimiento__sitios-gold {
+  border-image-source: linear-gradient(to right, #c39738, #deb761, #c39738);
+}
+
+.entretenimiento__sitios-silver {
+  border-image-source: linear-gradient(to right, #bcc6cc, #eee, #bcc6cc);
+}
+
+.lipari-card1 {
+  background: #a2b8e7;
+  min-height: 350px;
+}
+
+.lipari-card2 {
+  background: #E3BC92;
+}
+
+.lipari-card3 {
+  background: #ACE4BD;
+}
+
+.lipari-card4 {
+  background: #E6A0A0;
 }
 
 .navigation {
   width: 400px;
   height: calc(100vh - 100px);
-  background-color: #2b2b2b;
+  background-color: #bababa;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -174,6 +256,7 @@ body {
   top: 100px;
   -webkit-transition: 1s;
   transition: 1s;
+  font-size: 14pt;
 }
 
 .navigation__title {
@@ -182,7 +265,7 @@ body {
 }
 
 .navigation__link {
-  padding: 1.15rem;
+  padding: .7rem;
   color: #bababa;
   border-bottom: 1px solid #111;
   -webkit-transition: all 0.3s;
@@ -190,14 +273,14 @@ body {
 }
 
 .navigation__link:hover {
-  color: #f0f0f0;
+  color: #fff;
   background-color: #111;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #fff;
 }
 
 .mini-header {
   height: 100px;
-  background-color: white;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,24 +309,12 @@ body {
 }
 
 .mini-header_airbnb-logo {
-  fill: #FF5A5F;
-  width: 50px;
-  height: 50px;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
   margin-right: 5px;
 }
 
-.mini-header_lipari-logo {
-  width: 445px;
-  height: 200px;
-  -webkit-transform: scale(0.45);
-          transform: scale(0.45);
-}
-
-.corona {
-  margin-top: 120px;
-  display: block;
+.corona__section {
+  background-color: #a2b8e7;
+  padding: 20px 0;
 }
 
 .corona__row {
@@ -259,10 +330,89 @@ body {
   padding: 0 30px;
 }
 
+.sanitizacion__seccion {
+  min-height: 300px;
+  margin-bottom: 10px;
+}
+
+.sanitizacion__seccion-alcohol {
+  background-color: #ACE4BD;
+}
+
+.sanitizacion__seccion-cloro {
+  background-color: #E6A0A0;
+}
+
+.sanitizacion__seccion-sales {
+  background-color: #a2b8e7;
+  min-height: 650px;
+}
+
+.limpieza__seccion {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: -webkit-gradient(linear, left bottom, left top, from(#ffe7d5), to(#fff2d3)), -webkit-gradient(linear, left bottom, left top, from(#d5e2ff), to(#d3f7ff));
+  background: linear-gradient(to top, #ffe7d5 0%, #fff2d3 100%), linear-gradient(to top, #d5e2ff 0%, #d3f7ff 100%);
+  background-size: 50% 100%, 50% 100%;
+  background-position: 0 0, 100% 0;
+  background-origin: padding-box, padding-box;
+  background-repeat: no-repeat;
+}
+
+.limpieza__seccion-title {
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.75);
+  grid-column: span 2;
+  text-align: center;
+  margin: 0;
+}
+
+.limpieza__seccion-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  height: auto;
+  width: auto;
+}
+
+.limpieza__seccion-paragraph {
+  padding: 0 20px;
+}
+
+.sales__seccion {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+}
+
+.sales__seccion-img {
+  grid-row: span 5;
+}
+
+.sales__seccion-paragraph {
+  margin: 0px;
+}
+
 .-white-type {
   color: white;
 }
 
 .-justify-right {
   text-align: right;
+}
+
+.-float-img-left {
+  margin-right: 10px;
+  float: left;
+}
+
+.-float-img-right {
+  margin-left: 10px;
+  float: right;
+}
+
+.-span-2-cols {
+  grid-column: span 2;
 }
