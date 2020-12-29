@@ -15,7 +15,7 @@ window.onload = function () {
 			header.style.backgroundImage = backgrounds[currentBG];
 		};
 
-		var backgrounds = new Array('url(../images/01-header-bg-1.jpg)', 'url(../images/01-header-bg-2.jpg)', 'url(../images/01-header-bg-3.jpg)');
+		var backgrounds = new Array('url(./images/01-header-bg-1.jpg)', 'url(./images/01-header-bg-2.jpg)', 'url(./images/01-header-bg-3.jpg)');
 
 		var currentBG = 0;
 
