@@ -1,0 +1,23 @@
+.test-transparency {
+  opacity: 0.5;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.test-transparency:hover {
+  opacity: 1;
+}
+
+.test-keyboard {
+  background-color: gray;
+}
+
+#teclado-copy {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#teclado-copy:hover {
+  opacity: 1;
+}

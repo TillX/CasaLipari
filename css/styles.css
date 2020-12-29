@@ -6,7 +6,6 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: "Barlow Condensed", sans-serif;
-  overflow-x: hidden;
   letter-spacing: 1px;
   font-size: 16pt;
 }
@@ -72,10 +71,7 @@ body {
 .header {
   height: 420px;
   text-align: center;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.25)), to(rgba(255, 255, 255, 0))), url(../images/01-header-bg-1.jpg);
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0)), url(../images/01-header-bg-1.jpg);
-  background-size: cover;
-  background-position: bottom;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,9 +84,20 @@ body {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  overflow: hidden;
+  width: 100%;
+  -webkit-box-shadow: 0px 5px 15px #2b2b2b;
+          box-shadow: 0px 5px 15px #2b2b2b;
+}
+
+.header__background {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 420px, 0% 420px);
+          clip-path: polygon(0 0, 100% 0, 100% 420px, 0% 420px);
+  overflow: hidden;
   width: 100vw;
-  -webkit-box-shadow: 0px 5px 15px #bababa;
-          box-shadow: 0px 5px 15px #bababa;
+  height: 420px;
+  position: absolute;
+  z-index: -1;
 }
 
 .header_airbnb-logo {
@@ -102,6 +109,60 @@ body {
 
 .header_lipari-logo {
   margin-top: 20px;
+}
+
+#main-header-bg {
+  position: absolute;
+  width: 100vw;
+  height: 550px;
+  background-size: cover;
+  background-position: bottom;
+  -webkit-animation: kenburns 20s infinite;
+          animation: kenburns 20s infinite;
+  z-index: -1;
+  overflow: hidden;
+}
+
+@-webkit-keyframes kenburns {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  95% {
+    -webkit-transform: scale3d(1.5, 1.5, 1.5) translate3d(0, -120px, 0px);
+            transform: scale3d(1.5, 1.5, 1.5) translate3d(0, -120px, 0px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale3d(2, 2, 2) translate3d(0, -100px, 0px);
+            transform: scale3d(2, 2, 2) translate3d(0, -100px, 0px);
+    opacity: 0;
+  }
+}
+
+@keyframes kenburns {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  95% {
+    -webkit-transform: scale3d(1.5, 1.5, 1.5) translate3d(0, -120px, 0px);
+            transform: scale3d(1.5, 1.5, 1.5) translate3d(0, -120px, 0px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale3d(2, 2, 2) translate3d(0, -100px, 0px);
+            transform: scale3d(2, 2, 2) translate3d(0, -100px, 0px);
+    opacity: 0;
+  }
 }
 
 .cards {
@@ -178,9 +239,8 @@ body {
   background-repeat: no-repeat;
 }
 
-.entretenimiento-links-card {
-  background: none;
-  grid-column: span 2;
+.entretenimiento-card1 {
+  background-color: #a2b8e7;
 }
 
 .entretenimiento-card2 {
@@ -192,35 +252,55 @@ body {
 }
 
 .entretenimiento__sitios {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  width: 100%;
-  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 20px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 150px;
+  position: relative;
 }
 
 .entretenimiento__sitios-gold, .entretenimiento__sitios-silver {
-  border: 5px solid;
-  border-image-slice: 1;
   -ms-flex-item-align: center;
       align-self: center;
+  position: relative;
   width: 170px;
   height: 100px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
+.entretenimiento__sitios-gold::before, .entretenimiento__sitios-silver::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 180px;
+  height: 105px;
+  z-index: -1;
+  -webkit-clip-path: inset(0% 0% 0% 0% round 15px);
+          clip-path: inset(0% 0% 0% 0% round 15px);
+}
+
+.entretenimiento__sitios-gold::before {
+  background: -webkit-gradient(linear, left top, right top, from(#c39738), color-stop(#deb761), to(#c39738));
+  background: linear-gradient(to right, #c39738, #deb761, #c39738);
+}
+
+.entretenimiento__sitios-silver::before {
+  background: -webkit-gradient(linear, left top, right top, from(#bcc6cc), color-stop(#eee), to(#bcc6cc));
+  background: linear-gradient(to right, #bcc6cc, #eee, #bcc6cc);
+}
+
 .entretenimiento__sitios-gold:hover, .entretenimiento__sitios-silver:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-}
-
-.entretenimiento__sitios-gold {
-  border-image-source: linear-gradient(to right, #c39738, #deb761, #c39738);
-}
-
-.entretenimiento__sitios-silver {
-  border-image-source: linear-gradient(to right, #bcc6cc, #eee, #bcc6cc);
 }
 
 .lipari-card1 {
@@ -241,9 +321,12 @@ body {
 }
 
 .navigation {
-  width: 400px;
+  width: 550px;
   height: calc(100vh - 100px);
-  background-color: #bababa;
+  background-color: #fff;
+  border: 1px #111 solid;
+  border-left: 0;
+  overflow: hidden;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -252,7 +335,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  left: -400px;
+  left: -550px;
   top: 100px;
   -webkit-transition: 1s;
   transition: 1s;
@@ -260,22 +343,45 @@ body {
 }
 
 .navigation__title {
-  color: #bababa;
+  color: #111;
   text-align: center;
 }
 
 .navigation__link {
-  padding: .7rem;
-  color: #bababa;
+  padding: .5rem;
+  color: #111;
   border-bottom: 1px solid #111;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.navigation__link:hover {
-  color: #fff;
-  background-color: #111;
-  border-bottom: 1px solid #fff;
+.navigation__sites {
+  height: 100px;
+  width: 90vw;
+  background-color: #E6A0A0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 5px;
+  padding: 1rem;
+}
+
+.navigation__sites-item {
+  width: 60px;
+  height: 60px;
+  background-color: #a2b8e7;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.navigation__link:hover, .-current-page {
+  color: #111;
+  background-color: #a2b8e7;
+  padding: 1rem;
+}
+
+.-current-page {
+  pointer-events: none;
+  cursor: default;
 }
 
 .mini-header {
@@ -294,18 +400,19 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100vw;
-  -webkit-box-shadow: 0px 5px 15px #bababa;
-          box-shadow: 0px 5px 15px #bababa;
+  width: 100%;
+  -webkit-box-shadow: 0px 5px 15px #2b2b2b;
+          box-shadow: 0px 5px 15px #2b2b2b;
   position: absolute;
+  top: 0;
 }
 
 .mini-header_menu {
   width: 80px;
   height: 80px;
-  background: red;
   display: block;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .mini-header_airbnb-logo {
@@ -393,6 +500,79 @@ body {
 
 .sales__seccion-paragraph {
   margin: 0px;
+}
+
+.computadora-mouse {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.computadora-mouse__actions-item {
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin: 0 0 5px 20px;
+  padding: 10px;
+}
+
+.computadora-mouse__actions-item:hover {
+  background-color: #a2b8e7;
+}
+
+.computadora-mouse__mouse-image {
+  width: 243px;
+  height: 472px;
+  justify-self: center;
+  background-image: url(../images/03-computadora-mouse.png);
+}
+
+.computadora__mask {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.computadora__teclado {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  position: relative;
+}
+
+.computadora__teclado-item {
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin: 0 0 5px 20px;
+  padding: 10px;
+}
+
+.computadora__teclado-item:hover {
+  background-color: #a2b8e7;
+}
+
+.computadora__teclado-separator {
+  margin: 0 5px 20px 20px;
+  text-align: center;
+}
+
+.computadora__teclado-image {
+  width: 911px;
+  height: 421px;
+  background-image: url(../images/03-computadora-teclado.jpg);
+  justify-self: center;
+  position: absolute;
+  right: 10vw;
+  top: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.computadora__teclado-explanation {
+  text-align: center;
+}
+
+.computadora__filler {
+  height: 800px;
 }
 
 .-white-type {
