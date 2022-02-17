@@ -140,13 +140,18 @@ body {
   height: 160px;
   background-color: #F6896A;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 20px;
   align-items: center;
   box-shadow: 0px 5px 15px #2b2b2b;
 }
 .links-banner__item {
+  height: 130px;
   width: 230px;
-  height: 120px;
+  transition: 0.5s;
+}
+.links-banner__item:hover {
+  transform: scale(1.1);
 }
 
 .navigation {
