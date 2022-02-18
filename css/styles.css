@@ -85,6 +85,10 @@ body {
   height: 420px;
   position: absolute;
   z-index: -1;
+  background-color: #F1F5F9;
+}
+.header__lipari-logo {
+  filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.5));
 }
 
 #main-header-bg {
@@ -141,17 +145,74 @@ body {
   background-color: #F6896A;
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 25px;
   align-items: center;
   box-shadow: 0px 5px 15px #2b2b2b;
+  position: relative;
+  z-index: 10;
 }
 .links-banner__item {
-  height: 130px;
-  width: 230px;
+  height: 125px;
+  width: 225px;
   transition: 0.5s;
+  border-radius: 15px;
 }
 .links-banner__item:hover {
   transform: scale(1.1);
+  box-shadow: 0px 5px 15px #2b2b2b;
+}
+
+.body-container {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  background-image: url(../images/index-bg.jpg);
+  background-size: contain;
+  padding: 20px 20px;
+}
+
+.card-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 340px;
+  height: 340px;
+  background-color: #ffffffa0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 5px #F6896A inset;
+  padding: 20px;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.card:hover {
+  background-color: #F6896A;
+  box-shadow: 0px 0px 0px 5px #fff inset;
+  color: #fff;
+  text-decoration: none;
+}
+.card-img {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px auto;
+}
+.card-description {
+  text-align: center;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0);
+  font-size: 20px;
+  transition: 0.25s;
+}
+
+.-visible-description {
+  color: black;
 }
 
 .navigation {

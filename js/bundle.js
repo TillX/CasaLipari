@@ -70,6 +70,60 @@ window.onload = function () {
     }
   }
   /*
+  *** DESCRIPCION DE LAS TARJETAS DEL INDEX ***
+  */
+  //check for the description text
+
+
+  var descriptionText = document.getElementById("card-description");
+
+  if (descriptionText != null) {
+    // get cards
+    var cardWifi = document.getElementById("card-wifi");
+    var cardRules = document.getElementById("card-rules");
+    var cardComp = document.getElementById("card-computer");
+    var cardSites = document.getElementById("card-sites"); // reset text
+
+    descriptionText.innerHTML = ""; // put text and visible class on hover
+
+    cardWifi.onmouseover = function () {
+      descriptionText.innerHTML = "Nombre de la Red: Infinitum123456 <br>Password:123456789qwerty";
+      descriptionText.classList.add("-visible-description");
+    };
+
+    cardRules.onmouseover = function () {
+      descriptionText.innerHTML = "Reglamento completo de Casa Lipari, les pedimos por favor que lean el reglamento y nos comuniquen cualquier duda que pueda presentarse.";
+      descriptionText.classList.add("-visible-description");
+    };
+
+    cardComp.onmouseover = function () {
+      descriptionText.innerHTML = "Guia rapida de uso de la computadora y el software instalado.";
+      descriptionText.classList.add("-visible-description");
+    };
+
+    cardSites.onmouseover = function () {
+      descriptionText.innerHTML = "Algunos sitios cercanos al departamento que pueden ayudar. Restaurantes, tiendas de servicio, sitios turísticos y otros recursos útiles.";
+      descriptionText.classList.add("-visible-description");
+    }; // Reset visibility
+
+
+    cardWifi.onmouseleave = function () {
+      descriptionText.classList.remove("-visible-description");
+    };
+
+    cardRules.onmouseleave = function () {
+      descriptionText.classList.remove("-visible-description");
+    };
+
+    cardComp.onmouseleave = function () {
+      descriptionText.classList.remove("-visible-description");
+    };
+
+    cardSites.onmouseleave = function () {
+      descriptionText.classList.remove("-visible-description");
+    };
+  }
+  /*
   *** COMPUTADORA MOUSE ***
   */
 
