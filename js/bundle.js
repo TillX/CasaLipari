@@ -87,7 +87,7 @@ window.onload = function () {
     descriptionText.innerHTML = ""; // put text and visible class on hover
 
     cardWifi.onmouseover = function () {
-      descriptionText.innerHTML = "Nombre de la Red: Infinitum123456 <br>Password:123456789qwerty";
+      descriptionText.innerHTML = "Nombre de la Red: CasaLipari <br>Password:password000casa000lipari";
       descriptionText.classList.add("-visible-description");
     };
 
