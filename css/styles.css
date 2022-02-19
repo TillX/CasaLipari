@@ -45,9 +45,10 @@ body {
   padding: 5px 20px;
 }
 
-._spacer {
-  margin-top: 120px;
-  display: block;
+.body-container {
+  width: 100%;
+  min-height: 100%;
+  padding: 120px 15px 60px 15px;
 }
 
 .footer {
@@ -55,7 +56,7 @@ body {
   width: 100%;
   background-color: #111;
   color: #fff;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
 }
 .footer_phones {
@@ -162,12 +163,12 @@ body {
   box-shadow: 0px 5px 15px #2b2b2b;
 }
 
-.body-container {
+.card-container {
   width: 100%;
   height: auto;
   min-height: 500px;
   background-image: url(../images/index-bg.jpg);
-  background-size: contain;
+  background-size: cover;
   padding: 20px 20px;
 }
 
@@ -214,60 +215,6 @@ body {
   color: black;
 }
 
-.navigation {
-  width: 550px;
-  height: calc(100vh - 100px);
-  background-color: #fff;
-  border: 1px #111 solid;
-  border-left: 0;
-  overflow: hidden;
-  display: inline-flex;
-  flex-direction: column;
-  position: fixed;
-  left: -550px;
-  top: 100px;
-  float: left;
-  transition: 1s;
-  font-size: 14pt;
-  z-index: 2;
-}
-.navigation__title {
-  color: #111;
-  text-align: center;
-}
-.navigation__link {
-  padding: 0.5rem;
-  color: #111;
-  border-bottom: 1px solid #111;
-  transition: all 0.3s;
-}
-.navigation__sites {
-  height: 100px;
-  width: 100%;
-  background-color: #E6A0A0;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 5px;
-  padding: 1rem;
-}
-.navigation__sites-item {
-  width: 60px;
-  height: 60px;
-  background-color: #a2b8e7;
-  align-self: center;
-}
-
-.navigation__link:hover, .-current-page {
-  color: #111;
-  background-color: #a2b8e7;
-  padding: 1rem;
-}
-
-.-current-page {
-  pointer-events: none;
-  cursor: default;
-}
-
 .mini-header {
   height: 100px;
   background-color: #fff;
@@ -281,15 +228,40 @@ body {
   top: 0;
   z-index: 3;
 }
-.mini-header_menu {
-  width: 80px;
-  height: 80px;
-  display: block;
-  margin-left: 5px;
-  cursor: pointer;
+.mini-header__title {
+  margin-left: auto;
+  margin-right: auto;
 }
-.mini-header_airbnb-logo {
-  margin-right: 5px;
+
+.vcards {
+  display: grid;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 15px;
+  width: 100%;
+  margin: 1rem 0;
+  text-align: center;
+}
+.vcards__qr {
+  width: 300px;
+  height: 300px;
+  background-color: blue;
+  grid-row: 1;
+}
+.vcards__name {
+  grid-row: 2;
+}
+.vcards__link {
+  visibility: hidden;
+  height: 0px;
+}
+.vcards__scan-text {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .corona__section {
@@ -507,6 +479,20 @@ body {
   float: right;
 }
 
-.-span-2-cols {
-  grid-column: span 2;
+.-important {
+  text-align: left;
+  text-decoration: underline;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #F6896A;
+  width: 100%;
+  min-height: 95px;
+  border-radius: 5px;
+}
+.-important:before {
+  content: url("../images/attention.png");
+  margin-right: 15px;
 }
