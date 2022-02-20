@@ -1,0 +1,84 @@
+body {
+  margin: 10px;
+  letter-spacing: 1px;
+  font-size: 14pt;
+  font-family: Helvetica, sans-serif;
+  background-image: url("../images/rules-bg.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: normal;
+}
+
+h1 {
+  text-align: justify;
+}
+
+.logo-cel {
+  margin: 10px 0;
+}
+
+.base-subtitle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.base-paragraph {
+  padding: 5px 0;
+  margin-bottom: 2rem;
+}
+
+.-important {
+  text-align: left;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 10px;
+  background-color: #F6896A;
+  min-height: 95px;
+  border-radius: 5px;
+}
+.-important:before {
+  content: url("../images/attention.png");
+  margin-right: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  line-height: 15px;
+  font-size: 16pt;
+}
+
+.vcards {
+  display: grid;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 0.9fr;
+  grid-template-rows: 1fr;
+  grid-gap: 5px;
+  width: 100%;
+  margin: 1rem 0;
+  text-align: center;
+}
+.vcards__link {
+  padding: 20px;
+  background: linear-gradient(0deg, #ffa186 0%, #f6896a 100%);
+  min-height: 35px;
+  width: 100%;
+  border-radius: 10px;
+  border: solid 2px black;
+}
+.vcards__scan-text, .vcards__name, .vcards__qr {
+  visibility: hidden;
+  display: none;
+}

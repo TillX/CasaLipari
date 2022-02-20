@@ -92,7 +92,7 @@ window.onload = function () {
     };
 
     cardRules.onmouseover = function () {
-      descriptionText.innerHTML = "Reglamento completo de Casa Lipari, les pedimos por favor que lean el reglamento y nos comuniquen cualquier duda que pueda presentarse.";
+      descriptionText.innerHTML = "Les pedimos por favor que lean cuidadosamente las siguientes instrucciones y nos comuniquen cualquier duda que pueda presentarse.";
       descriptionText.classList.add("-visible-description");
     };
 

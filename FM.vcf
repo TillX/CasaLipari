@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
+N:Méndez;Francisco;;;
+FN:Francisco Méndez
+ORG:Casa Lipari;
+TEL;type=pref:55 4819 1725
+ADR;type=HOME;type=pref:;;Calle Mar Negro #6;Miguel Hidalgo;Tacuba;11310;México
+item1.URL;type=pref:airbnb.com/h/casa-lipari
+item1.X-ABLabel:_$!<HomePage>!$_
+UID:1EA9A981-4FDC-4A65-90EC-C41B9D0AC5DA
+X-ABUID:17CEEFC7-4061-40AB-98B9-9029ED306410:ABPerson
+END:VCARD

@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
+N:Contreras;Graciela;;;
+FN:Graciela Contreras
+ORG:Casa Lipari;
+TEL;type=pref:55 3469 2989
+ADR;type=HOME;type=pref:;;Calle Mar Negro #6;Miguel Hidalgo;Tacuba;11310;Mexico
+item1.URL;type=pref:airbnb.com/h/casa-lipari
+item1.X-ABLabel:_$!<HomePage>!$_
+UID:D3A0D80C-7732-42FA-AA32-69EE84AD2D71
+X-ABUID:4B2F88E4-0340-4B59-98B4-E735C72201BD:ABPerson
+END:VCARD
