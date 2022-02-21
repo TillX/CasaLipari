@@ -3,11 +3,18 @@ body {
   letter-spacing: 1px;
   font-size: 14pt;
   font-family: Helvetica, sans-serif;
+}
+
+.bg-background {
   background-image: url("../images/rules-bg.jpg");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: contain;
+  background-position: center;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
