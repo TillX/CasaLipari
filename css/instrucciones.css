@@ -7,7 +7,7 @@ body {
 
 .bg-background {
   background-image: url("../images/rules-bg.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   position: fixed;
   z-index: -10;
@@ -88,4 +88,18 @@ a {
 .vcards__scan-text, .vcards__name, .vcards__qr {
   visibility: hidden;
   display: none;
+}
+
+.share-btn {
+  margin: 1rem 0;
+  padding: 20px;
+  background: linear-gradient(0deg, #ffa186 0%, #f6896a 100%);
+  min-height: 35px;
+  width: 100%;
+  border-radius: 10px;
+  border: solid 2px black;
+  color: black;
+  font-weight: bold;
+  line-height: 15px;
+  font-size: 16pt;
 }
