@@ -7,7 +7,7 @@ body {
 
 .bg-background {
   background-image: url("../images/rules-bg.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   position: fixed;
   z-index: -10;
