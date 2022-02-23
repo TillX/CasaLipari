@@ -353,6 +353,7 @@ body {
   cursor: pointer;
   text-decoration: underline;
   height: 35px;
+  width: 60.5%;
   padding: 5px 10px;
   border-radius: 5px;
   transition: 0.5s;
@@ -378,6 +379,24 @@ body {
   width: 15px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+.maps-list__link {
+  float: right;
+  position: relative;
+  z-index: 10;
+  height: 35px;
+  padding: 5px 10px 5px 40px;
+  width: 39%;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.maps-list__link-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+.maps-list__link:hover {
+  background-color: white;
 }
 
 .-white-type {
