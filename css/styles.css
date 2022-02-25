@@ -172,8 +172,8 @@ body {
 
 .card-container {
   width: 100%;
-  height: auto;
   min-height: 500px;
+  height: calc(100vh - 440px);
   background-image: url(../images/index-bg.jpg);
   background-size: cover;
   padding: 20px 20px;
@@ -292,7 +292,6 @@ body {
   padding: 20px 5px;
 }
 .software-list__icon {
-  width: 100px;
   height: 100px;
   margin: 0 auto;
   margin-bottom: 20px;

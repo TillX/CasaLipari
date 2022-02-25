@@ -102,7 +102,7 @@ window.onload = function () {
     };
 
     cardComp.onmouseover = function () {
-      descriptionText.innerHTML = "Guia rapida de uso de la computadora y el software instalado.";
+      descriptionText.innerHTML = "Guía rápida de uso de la computadora y el software instalado.";
       descriptionText.classList.add("-visible-description");
     };
 
