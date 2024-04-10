@@ -4,24 +4,25 @@ window.onload = function () {
   /*
   *** HEADER ***
   */
+
   //check for the header
   var header = document.getElementById("main-header-bg");
-
   if (header != null) {
     var nextBackground = function nextBackground() {
       currentBG++;
       currentBG = currentBG % backgrounds.length;
       header.style.backgroundImage = backgrounds[currentBG];
     };
-
     var backgrounds = new Array('url(./images/01-header-bg-1.jpg)', 'url(./images/01-header-bg-2.jpg)', 'url(./images/01-header-bg-3.jpg)');
     var currentBG = 0;
     setInterval(nextBackground, 20000);
     header.style.backgroundImage = backgrounds[0];
   }
+
   /*
   *** NAVIGATION ***
   */
+
   // //check for the menu button
   // var menu = document.getElementById("menu-button");
   // if(menu != null){
@@ -77,60 +78,56 @@ window.onload = function () {
   /*
   *** DESCRIPCION DE LAS TARJETAS DEL INDEX ***
   */
+
   //check for the description text
-
-
   var descriptionText = document.getElementById("card-description");
-
   if (descriptionText != null) {
     // get cards
     var cardWifi = document.getElementById("card-wifi");
     var cardRules = document.getElementById("card-rules");
     var cardComp = document.getElementById("card-computer");
-    var cardSites = document.getElementById("card-sites"); // reset text
+    var cardSites = document.getElementById("card-sites");
 
-    descriptionText.innerHTML = ""; // put text and visible class on hover
+    // reset text
+    descriptionText.innerHTML = "";
 
+    // put text and visible class on hover
     cardWifi.onmouseover = function () {
       descriptionText.innerHTML = "Nombre de la Red: CasaLipari <br>Password:password000casa000lipari";
       descriptionText.classList.add("-visible-description");
     };
-
     cardRules.onmouseover = function () {
       descriptionText.innerHTML = "Les pedimos por favor que lean cuidadosamente las siguientes instrucciones y nos comuniquen cualquier duda que pueda presentarse.";
       descriptionText.classList.add("-visible-description");
     };
-
     cardComp.onmouseover = function () {
       descriptionText.innerHTML = "Guía rápida de uso de la computadora y el software instalado.";
       descriptionText.classList.add("-visible-description");
     };
-
     cardSites.onmouseover = function () {
       descriptionText.innerHTML = "Algunos sitios cercanos al departamento que pueden ayudar. Restaurantes, tiendas de servicio, sitios turísticos y otros recursos útiles.";
       descriptionText.classList.add("-visible-description");
-    }; // Reset visibility
+    };
 
-
+    // Reset visibility
     cardWifi.onmouseleave = function () {
       descriptionText.classList.remove("-visible-description");
     };
-
     cardRules.onmouseleave = function () {
       descriptionText.classList.remove("-visible-description");
     };
-
     cardComp.onmouseleave = function () {
       descriptionText.classList.remove("-visible-description");
     };
-
     cardSites.onmouseleave = function () {
       descriptionText.classList.remove("-visible-description");
     };
   }
+
   /*
   *** COMPUTADORA MOUSE ***
   */
+
   // var mouseList = document.getElementById("computadora-mouse__list");
   // if(mouseList != null){
   //
@@ -190,6 +187,7 @@ window.onload = function () {
   /*
   *** COMPUTADORA TECLADO ***
   */
+
   // //checar si estamos en la pagina correcta
   // var keyboardList = document.getElementById("computadora__teclado-list");
   // if(keyboardList != null){
@@ -327,16 +325,14 @@ window.onload = function () {
   // 		});
   //
   // }
-
 };
+
 /*
 *** SITIOS DE INTERES ***
 */
+
 //check if map exists
-
-
 var map = document.getElementById("map");
-
 if (map != null) {
   var GetMap = function GetMap() {
     bingMap = new Microsoft.Maps.Map('#map', {
@@ -354,23 +350,21 @@ if (map != null) {
     });
     bingMap.entities.push(pin);
   }; // set map route
-
-
   var viewMapRoute = function viewMapRoute(pointData) {
     // check for real data set
     if (pointData.coordsLat != undefined) {
       //Clear map
       bingMap.entities.clear();
-
       if (directionsManager != undefined) {
         directionsManager.clearAll();
-      } //Load the directions module.
+      }
 
-
+      //Load the directions module.
       Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
         //Create an instance of the directions manager.
-        directionsManager = new Microsoft.Maps.Directions.DirectionsManager(bingMap); //Create waypoints to route between.
+        directionsManager = new Microsoft.Maps.Directions.DirectionsManager(bingMap);
 
+        //Create waypoints to route between.
         var initialWaypoint = new Microsoft.Maps.Directions.Waypoint({
           address: 'Casa Lipari',
           location: new Microsoft.Maps.Location(lipariLat, lipariLng)
@@ -380,25 +374,26 @@ if (map != null) {
           address: pointData.locationName,
           location: new Microsoft.Maps.Location(pointData.coordsLat, pointData.coordsLng)
         });
-        directionsManager.addWaypoint(finalWaypoint); //Specify the element in which the itinerary will be rendered.
+        directionsManager.addWaypoint(finalWaypoint);
 
+        //Specify the element in which the itinerary will be rendered.
         directionsManager.setRenderOptions({
           itineraryContainer: '#directionsItinerary'
-        }); //Calculate directions.
+        });
 
+        //Calculate directions.
         directionsManager.calculateDirections();
       });
     }
   }; //get map markers
-
-
   // Create map
   var bingMap;
   var directionsManager;
   var lipariLat = 19.456860573001162;
   var lipariLng = -99.18836544350118;
-  var sitesList = document.getElementById("maps-list"); //when click
+  var sitesList = document.getElementById("maps-list");
 
+  //when click
   sitesList.onclick = function (e) {
     if (bingMap != undefined) {
       //check if only hover on li items
