@@ -234,8 +234,8 @@ body {
   text-align: center;
 }
 .vcards__qr {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   grid-row: 1;
   padding: 10px;
   box-sizing: padding-box;
@@ -245,7 +245,7 @@ body {
 .vcards__name {
   grid-row: 2;
 }
-.vcards__link {
+.vcards__link, .vcards__title {
   visibility: hidden;
   display: none;
 }
