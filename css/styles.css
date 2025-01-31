@@ -156,14 +156,14 @@ body {
   height: calc(100vh - 440px);
   background-image: url(../images/index-bg.jpg);
   background-size: cover;
-  padding: 20px 20px;
+  padding: 0px 20px;
 }
 
 .card-row {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 20px;
 }
 
